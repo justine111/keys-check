@@ -1,0 +1,213 @@
+:root {
+  --keywidth: 52px;
+  --keyheight: 55px;
+  --keyrowgap: 5px;
+  --keycolumngap: 2px;
+}
+
+.page {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-rows: min-content 1fr 2fr min-content;
+  justify-items: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+.header {
+  padding-top: 20px;
+  text-align: center;
+  font-size: 50px;
+  width: 100%;
+  color: #074173;
+}
+
+.keyboardAccess {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  text-align: center;
+  row-gap: 10px;
+  width: 300px;
+}
+
+#requestButton {
+  align-items: center;
+  background-color: #fee6e3;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#requestButton:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+#requestButton:hover:after {
+  transform: translate(0, 0);
+}
+
+#requestButton:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+#requestButton:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  #requestButton {
+    padding: 0 40px;
+  }
+}
+
+.keyboardName {
+  font-size: 20px;
+}
+
+.key {
+  font-size: 14px;
+  background-color: white;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  margin: 2px;
+  transition: transform 0.1s ease-in-out;
+  pointer-events: none;
+  width: var(--keywidth);
+  height: var(--keyheight);
+  text-align: center;
+}
+
+.large-modifier {
+  width: 335px;
+}
+
+.medium-modifier {
+  width: 112px;
+}
+
+.medium1-modifier {
+  width: 110px;
+}
+
+.medium2-modifier {
+  width: 130px;
+}
+
+.medium3-modifier {
+  width: 150px;
+}
+
+.small-modifier {
+  width: 82px;
+}
+
+.small1-modifier {
+  width: 85px;
+}
+
+.highlightKey {
+  background-color: lightgreen;
+}
+
+.keyDownStyle {
+  transform: scale(0.95);
+}
+
+.keyUpStlye {
+  transform: scale(1);
+}
+
+
+span:active {
+  background-color: white;
+  box-shadow: 0 2px 2px #666;
+  transform: translateY(4px);
+}
+
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  column-gap: 10px;
+  justify-content: center;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(6, var(--keyheight));
+  row-gap: var(--keyrowgap);
+}
+
+.container > div {
+  display: flex;
+}
+
+
+.F1,
+.F5,
+.F9 {
+  margin-left: calc(var(--keywidth) - 11px);
+}
+
+.fifth-row {
+  grid-row: 5 / 6;
+  display: flex;
+  justify-content: center;
+}
+
+.ArrowUp {
+  grid-column: 2 / 3;
+}
+
+.sixth-row {
+  grid-row: 6 / 7;
+}
+
+.NumpadAdd {
+  height: calc(var(--keyheight)*2 + var(--keyrowgap));
+  grid-row: 2 / 4;
+}
+
+.NumpadEnter {
+  height: calc(var(--keyheight)*2 + var(--keyrowgap));
+  grid-row: 5 / 7;
+}
+
+
+.Numpad0 {
+  width: calc(var(--keywidth) * 2 + 5px);
+}
+
+a {
+  color: rgb(129, 108, 111);
+}
