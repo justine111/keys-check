@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,23 +16,24 @@ const Keyboard = () => {
     //set keypress counter to 0 and get USB connected.
     const [keyPressCounter, setKeyPressCounter] = useState(0);
     const [keyboardName, setKeyboardName] = useState('');
+    const keyRefs = useRef({});
 
     useEffect(() => {
         //this function is to highlight the pressed key tab (CSS part).
         const highlightKey = (e) => {
-            const key = document.querySelector(`.${e.code}`);
+            const key = keyRefs.current[e.code];
             if (key) key.classList.add("highlightKey");
         };
 
         //this function is the indecator tab is being press (CSS part).
         const completeKeyDown = (e) => {
-            const key = document.querySelector(`.${e.code}`);
+            const key = keyRefs.current[e.code];
             if (key) key.classList.add("keyDownStyle");
         };
 
         //This function removes the keyDownStyle class and adds the keyUpStyle class when the key is released (CSS part).
         const completeKeyUp = (e) => {
-            const key = document.querySelector(`.${e.code}`);   
+            const key = keyRefs.current[e.code];  
             if (key) {
                 key.classList.remove("keyDownStyle");
                 key.classList.add("keyUpStyle");
@@ -104,53 +105,56 @@ const Keyboard = () => {
             <div className="keyboard">
                 <div className="container function-qwerty-container">
                     <div className="first-row function-qwerty">
-                        <span className="key Escape">Esc</span>
-                        <span className="key F1">F1</span>
-                        <span className="key F2">F2</span>
-                        <span className="key F3">F3</span>
-                        <span className="key F4">F4</span>
-                        <span className="key F5">F5</span>
-                        <span className="key F6">F6</span>
-                        <span className="key F7">F7</span>
-                        <span className="key F8">F8</span>
-                        <span className="key F9">F9</span>
-                        <span className="key F10">F10</span>
-                        <span className="key F11">F11</span>
-                        <span className="key F12">F12</span>
+                        <span className="key Escape" ref={el => keyRefs.current['Escape'] = el}>Esc</span>
+
+                        <span className="key F1" ref={el => keyRefs.current['F1'] = el}>F1</span>
+                        <span className="key F2" ref={el => keyRefs.current['F2'] = el}>F2</span>
+                        <span className="key F3" ref={el => keyRefs.current['F3'] = el}>F3</span>
+                        <span className="key F4" ref={el => keyRefs.current['F4'] = el}>F4</span>
+
+                        <span className="key F5" ref={el => keyRefs.current['F5'] = el}>F5</span>
+                        <span className="key F6" ref={el => keyRefs.current['F6'] = el}>F6</span>
+                        <span className="key F7" ref={el => keyRefs.current['F7'] = el}>F7</span>
+                        <span className="key F8" ref={el => keyRefs.current['F8'] = el}>F8</span>
+
+                        <span className="key F9" ref={el => keyRefs.current['F9'] = el}>F9</span>
+                        <span className="key F10" ref={el => keyRefs.current['F10'] = el}>F10</span>
+                        <span className="key F11" ref={el => keyRefs.current['F11'] = el}>F11</span>
+                        <span className="key F12" ref={el => keyRefs.current['F12'] = el}>F12</span>
                     </div>
 
                     <div className="sec-row function-qwerty">
-                        <span className="key Backquote">`<br />~</span>
-                        <span className="key Digit1">!<br />1</span>
-                        <span className="key Digit2">@<br />2</span>
-                        <span className="key Digit3">#<br />3</span>
-                        <span className="key Digit4">$<br />4</span>
-                        <span className="key Digit5">%<br />5</span>
-                        <span className="key Digit6">^<br />6</span>
-                        <span className="key Digit7">&<br />7</span>
-                        <span className="key Digit8">*<br />8</span>
-                        <span className="key Digit9">(<br />9</span>
-                        <span className="key Digit0">)<br />0</span>
-                        <span className="key Minus">_<br />-</span>
-                        <span className="key Equal">+<br />=</span>
-                        <span className="key Backspace medium-modifier">Backspace</span>
+                        <span className="key Backquote" ref={el => keyRefs.current['Backquote'] = el}>`<br />~</span>
+                        <span className="key Digit1" ref={el => keyRefs.current['Digit1'] = el}>!<br />1</span>
+                        <span className="key Digit2" ref={el => keyRefs.current['Digit2'] = el}>@<br />2</span>
+                        <span className="key Digit3" ref={el => keyRefs.current['Digit3'] = el}>#<br />3</span>
+                        <span className="key Digit4" ref={el => keyRefs.current['Digit4'] = el}>$<br />4</span>
+                        <span className="key Digit5" ref={el => keyRefs.current['Digit5'] = el}>%<br />5</span>
+                        <span className="key Digit6" ref={el => keyRefs.current['Digit6'] = el}>^<br />6</span>
+                        <span className="key Digit7" ref={el => keyRefs.current['Digit7'] = el}>&<br />7</span>
+                        <span className="key Digit8" ref={el => keyRefs.current['Digit8'] = el}>*<br />8</span>
+                        <span className="key Digit9" ref={el => keyRefs.current['Digit9'] = el}>(<br />9</span>
+                        <span className="key Digit0" ref={el => keyRefs.current['Digit0'] = el}>)<br />0</span>
+                        <span className="key Minus" ref={el => keyRefs.current['Minus'] = el}>_<br />-</span>
+                        <span className="key Equal" ref={el => keyRefs.current['Equal'] = el}>+<br />=</span>
+                        <span className="key Backspace medium-modifier" ref={el => keyRefs.current['Backspace'] = el}>Backspace</span>
                     </div>
 
                     <div className="third-row function-qwerty">
-                        <span className="key Tab small-modifier">Tab</span>
-                        <span className="key KeyQ">Q</span>
-                        <span className="key KeyW">W</span>
-                        <span className="key KeyE">E</span>
-                        <span className="key KeyR">R</span>
-                        <span className="key KeyT">T</span>
-                        <span className="key KeyY">Y</span>
-                        <span className="key KeyU">U</span>
-                        <span className="key KeyI">I</span>
-                        <span className="key KeyO">O</span>
-                        <span className="key KeyP">P</span>
-                        <span className="key BracketLeft">{'{'}</span>
-                        <span className="key BracketRight">{'}'}</span>
-                        <span className="key Backslash small-modifier">|<br />\</span>
+                        <span className="key Tab small-modifier" ref={el => keyRefs.current['Tab'] = el}>Tab</span>
+                        <span className="key KeyQ" ref={el => keyRefs.current['KeyQ'] = el}>Q</span>
+                        <span className="key KeyW" ref={el => keyRefs.current['KeyW'] = el}>W</span>
+                        <span className="key KeyE" ref={el => keyRefs.current['KeyE'] = el}>E</span>
+                        <span className="key KeyR" ref={el => keyRefs.current['KeyR'] = el}>R</span>
+                        <span className="key KeyT" ref={el => keyRefs.current['KeyT'] = el}>T</span>
+                        <span className="key KeyY" ref={el => keyRefs.current['KeyY'] = el}>Y</span>
+                        <span className="key KeyU" ref={el => keyRefs.current['KeyU'] = el}>U</span>
+                        <span className="key KeyI" ref={el => keyRefs.current['KeyI'] = el}>I</span>
+                        <span className="key KeyO" ref={el => keyRefs.current['KeyO'] = el}>O</span>
+                        <span className="key KeyP" ref={el => keyRefs.current['KeyP'] = el}>P</span>
+                        <span className="key BracketLeft" ref={el => keyRefs.current['BracketLeft'] = el}>{'{'}</span>
+                        <span className="key BracketRight" ref={el => keyRefs.current['BracketRight'] = el}>{'}'}</span>
+                        <span className="key Backslash small-modifier" ref={el => keyRefs.current['Backslash'] = el}>|<br/>\</span>
                     </div>
 
                     <div className="fourth-row function-qwerty">
