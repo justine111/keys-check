@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 //This buttons will be prevented when they are pressed.
 const lockedKeys = [
@@ -29,7 +32,7 @@ const Keyboard = () => {
 
         //This function removes the keyDownStyle class and adds the keyUpStyle class when the key is released (CSS part).
         const completeKeyUp = (e) => {
-            const key = document.querySelector(`.${e.code}`);
+            const key = document.querySelector(`.${e.code}`);   
             if (key) {
                 key.classList.remove("keyDownStyle");
                 key.classList.add("keyUpStyle");
@@ -69,23 +72,31 @@ const Keyboard = () => {
     //This function uses the WebUSB API to request access to a USB device (specifically a keyboard).
     const requestDevice = () => {
         navigator.usb.requestDevice({ filters: [{ classCode: 3, subclassCode: 1, protocolCode: 1 }] })
-        .then(device => {
+          .then(device => {
             setKeyboardName(device.productName);
+            toast.success("USB Device Successfully Connected!");
+            
             console.log('Device:', device);
             console.log('Manufacturer:', device.manufacturerName);
             console.log('Product:', device.productName);
-        })
-        .catch(error => {
+          })
+          .catch(error => {
             console.error('Error:', error);
-        });
+            toast.error("Failed to request USB device access!");
+          });
+      };
+    
+    const handleButtonClick = () => {
+        requestDevice();
     };
+
 
     return (
         <div className="page">
             <div className='header'>Keys Check</div>
 
             <div className='keyboardAccess'>
-                <button id='requestButton' onClick={requestDevice}>Request USB Device Access</button>
+                <button id='requestButton' onClick={handleButtonClick}>Request USB Device Access</button>
                 <div className='keyPressCounter'>Key press counter: {keyPressCounter}</div>
                 <div className="keyboardName">Current Keyboard: {keyboardName}</div>
             </div>
@@ -249,6 +260,7 @@ const Keyboard = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </div>
     );
 };
