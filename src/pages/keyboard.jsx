@@ -8,7 +8,7 @@ const lockedKeys = [
     "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10",
     "F11", "F12", "Tab", "CapsLock", "Backspace", "PrintScreen",
     "ScrollLock", "Pause", "Insert", "Home", "PageUp", "Delete",
-    "End", "PageDown", "NumLock"
+    "End", "PageDown", "NumLock", "Fn"
 ];
 
 const Keyboard = () => {
@@ -159,108 +159,108 @@ const Keyboard = () => {
 
                     <div className="fourth-row function-qwerty">
                         <span className="key CapsLock medium-modifier">Caps Lock</span>
-                        <span className="key KeyA">A</span>
-                        <span className="key KeyS">S</span>
-                        <span className="key KeyD">D</span>
-                        <span className="key KeyF">F</span>
-                        <span className="key KeyG">G</span>
-                        <span className="key KeyH">H</span>
-                        <span className="key KeyJ">J</span>
-                        <span className="key KeyK">K</span>
-                        <span className="key KeyL">L</span>
-                        <span className="key Semicolon">:<br />;</span>
-                        <span className="key Quote">"<br />'</span>
-                        <span className="key Enter medium1-modifier">Enter</span>
+                        <span className="key KeyA" ref={el => keyRefs.current['KeyA'] = el}>A</span>
+                        <span className="key KeyS" ref={el => keyRefs.current['KeyS'] = el}>S</span>
+                        <span className="key KeyD" ref={el => keyRefs.current['KeyD'] = el}>D</span>
+                        <span className="key KeyF" ref={el => keyRefs.current['KeyF'] = el}>F</span>
+                        <span className="key KeyG" ref={el => keyRefs.current['KeyG'] = el}>G</span>
+                        <span className="key KeyH" ref={el => keyRefs.current['KeyH'] = el}>H</span>
+                        <span className="key KeyJ" ref={el => keyRefs.current['KeyJ'] = el}>J</span>
+                        <span className="key KeyK" ref={el => keyRefs.current['KeyK'] = el}>K</span>
+                        <span className="key KeyL" ref={el => keyRefs.current['KeyL'] = el}>L</span>
+                        <span className="key Semicolon" ref={el => keyRefs.current['Semicolon'] = el}>:<br />;</span>
+                        <span className="key Quote" ref={el => keyRefs.current['Quote'] = el}>"<br />'</span>
+                        <span className="key Enter medium1-modifier" ref={el => keyRefs.current['Enter'] = el}>Enter</span>
                     </div>
 
                     <div className="fifth-row function-qwerty">
                         <span className="key ShiftLeft medium2-modifier">Shift</span>
-                        <span className="key KeyZ">Z</span>
-                        <span className="key KeyX">X</span>
-                        <span className="key KeyC">C</span>
-                        <span className="key KeyV">V</span>
-                        <span className="key KeyB">B</span>
-                        <span className="key KeyN">N</span>
-                        <span className="key KeyM">M</span>
-                        <span className="key Comma">{'<'}</span>
-                        <span className="key Period">{'>'}</span>
-                        <span className="key Slash">?<br />/</span>
-                        <span className="key ShiftRight medium3-modifier">Shift</span>
+                        <span className="key KeyZ" ref={el => keyRefs.current['KeyZ'] = el}>Z</span>
+                        <span className="key KeyX" ref={el => keyRefs.current['KeyX'] = el}>X</span>
+                        <span className="key KeyC" ref={el => keyRefs.current['KeyC'] = el}>C</span>
+                        <span className="key KeyV" ref={el => keyRefs.current['KeyV'] = el}>V</span>
+                        <span className="key KeyB" ref={el => keyRefs.current['KeyB'] = el}>B</span>
+                        <span className="key KeyN" ref={el => keyRefs.current['KeyN'] = el}>N</span>
+                        <span className="key KeyM" ref={el => keyRefs.current['KeyM'] = el}>M</span>
+                        <span className="key Comma" ref={el => keyRefs.current['Comma'] = el}>{'<'}</span>
+                        <span className="key Period" ref={el => keyRefs.current['Period'] = el}>{'>'}</span>
+                        <span className="key Slash" ref={el => keyRefs.current['Slash'] = el}>?<br />/</span>
+                        <span className="key ShiftRight medium3-modifier" ref={el => keyRefs.current['ShiftRight'] = el}>Shift</span>
                     </div>
 
                     <div className="sixth-row function-qwerty">
-                        <span className="key ControlLeft small-modifier">Control</span>
-                        <span className="key MetaLeft small-modifier">Windows</span>
-                        <span className="key AltLeft small-modifier">Alt</span>
-                        <span className="key Space large-modifier"></span>
-                        <span className="key AltRight small-modifier">Alt</span>
-                        <span className="key ControlRight small-modifier">Control</span>
-                        <span className="key Fn small1-modifier">Fn</span>
+                        <span className="key ControlLeft small-modifier" ref={el => keyRefs.current['ControlLeft'] = el}>Control</span>
+                        <span className="key MetaLeft small-modifier" ref={el => keyRefs.current['MetaLeft'] = el}>Windows</span>
+                        <span className="key AltLeft small-modifier" ref={el => keyRefs.current['AltLeft'] = el}>Alt</span>
+                        <span className="key Space large-modifier" ref={el => keyRefs.current['Space'] = el}></span>
+                        <span className="key AltRight small-modifier" ref={el => keyRefs.current['AltRight'] = el}>Alt</span>
+                        <span className="key ControlRight small-modifier" ref={el => keyRefs.current['ControlRight'] = el}>Control</span>
+                        <span className="key Fn small1-modifier" ref={el => keyRefs.current['Fn'] = el}>Fn</span>
                     </div>
                 </div>
 
                 <div className="container navigation-container">
                     <div className="first-row navigation">
-                        <span className="key PrintScreen">Print</span>
-                        <span className="key ScrollLock">Scroll</span>
-                        <span className="key Pause">Pause</span>
+                        <span className="key PrintScreen" ref={el => keyRefs.current['PrintScreen'] = el}>Print</span>
+                        <span className="key ScrollLock" ref={el => keyRefs.current['ScrollLock'] = el}>Scroll</span>
+                        <span className="key Pause" ref={el => keyRefs.current['Pause'] = el}>Pause</span>
                     </div>
 
                     <div className="sec-row navigation">
-                        <span className="key Insert">Insert</span>
-                        <span className="key Home">Home</span>
-                        <span className="key PageUp">Page<br />Up</span>
+                        <span className="key Insert" ref={el => keyRefs.current['Insert'] = el}>Insert</span>
+                        <span className="key Home" ref={el => keyRefs.current['Home'] = el}>Home</span>
+                        <span className="key PageUp" ref={el => keyRefs.current['PageUp'] = el}>Page<br />Up</span>
                     </div>
 
                     <div className="third-row navigation">
-                        <span className="key Delete">Delete</span>
-                        <span className="key End">End</span>
-                        <span className="key PageDown">Page<br />Down</span>
+                        <span className="key Delete" ref={el => keyRefs.current['Delete'] = el}>Delete</span>
+                        <span className="key End" ref={el => keyRefs.current['End'] = el}>End</span>
+                        <span className="key PageDown" ref={el => keyRefs.current['PageDown'] = el}>Page<br />Down</span>
                     </div>
 
                     <div className="fifth-row arrows">
-                        <span className="key ArrowUp">&#8593;</span>
+                        <span className="key ArrowUp" ref={el => keyRefs.current['ArrowUp'] = el}>&#8593;</span>
                     </div>
 
                     <div className="sixth-row arrows">
-                        <span className="key ArrowLeft">&#8592;</span>
-                        <span className="key ArrowDown">&#8595;</span>
-                        <span className="key ArrowRight">&#8594;</span>
+                        <span className="key ArrowLeft" ref={el => keyRefs.current['ArrowLeft'] = el}>&#8592;</span>
+                        <span className="key ArrowDown" ref={el => keyRefs.current['ArrowDown'] = el}>&#8595;</span>
+                        <span className="key ArrowRight" ref={el => keyRefs.current['ArrowRight'] = el}>&#8594;</span>
                     </div>
                 </div>
 
                 <div className="container numpad-container">
                     <div className="first-row"><span></span></div>
                     <div className="sec-row numpad">
-                        <span className="key NumLock">Num Lock</span>
-                        <span className="key NumpadDivide">/</span>
-                        <span className="key NumpadMultiply">*</span>
-                        <span className="key NumpadSubtract">-</span>
+                        <span className="key NumLock" ref={el => keyRefs.current['NumLock'] = el}>Num Lock</span>
+                        <span className="key NumpadDivide" ref={el => keyRefs.current['NumpadDivide'] = el}>/</span>
+                        <span className="key NumpadMultiply" ref={el => keyRefs.current['NumpadMultiply'] = el}>*</span>
+                        <span className="key NumpadSubtract" ref={el => keyRefs.current['NumpadSubtract'] = el}>-</span>
                     </div>
 
                     <div className="third-row numpad">
-                        <span className="key Numpad7">7</span>
-                        <span className="key Numpad8">8</span>
-                        <span className="key Numpad9">9</span>
-                        <span className="key NumpadAdd">+</span>
+                        <span className="key Numpad7" ref={el => keyRefs.current['Numpad7'] = el}>7</span>
+                        <span className="key Numpad8" ref={el => keyRefs.current['Numpad8'] = el}>8</span>
+                        <span className="key Numpad9" ref={el => keyRefs.current['Numpad9'] = el}>9</span>
+                        <span className="key NumpadAdd" ref={el => keyRefs.current['NumpadAdd'] = el}>+</span>
                     </div>
 
                     <div className="fourth-row numpad">
-                        <span className="key Numpad4">4</span>
-                        <span className="key Numpad5">5</span>
-                        <span className="key Numpad6">6</span>
+                        <span className="key Numpad4" ref={el => keyRefs.current['Numpad4'] = el}>4</span>
+                        <span className="key Numpad5" ref={el => keyRefs.current['Numpad5'] = el}>5</span>
+                        <span className="key Numpad6" ref={el => keyRefs.current['Numpad6'] = el}>6</span>
                     </div>
 
                     <div className="fifth-row numpad">
-                        <span className="key Numpad1">1</span>
-                        <span className="key Numpad2">2</span>
-                        <span className="key Numpad3">3</span>
-                        <span className="key NumpadEnter">Enter</span>
+                        <span className="key Numpad1" ref={el => keyRefs.current['Numpad1'] = el}>1</span>
+                        <span className="key Numpad2" ref={el => keyRefs.current['Numpad2'] = el}>2</span>
+                        <span className="key Numpad3" ref={el => keyRefs.current['Numpad3'] = el}>3</span>
+                        <span className="key NumpadEnter" ref={el => keyRefs.current['NumpadEnter'] = el}>Enter</span>
                     </div>
 
                     <div className="sixth-row numpad">
-                        <span className="key Numpad0">0</span>
-                        <span className="key NumpadDecimal">.</span>
+                        <span className="key Numpad0" ref={el => keyRefs.current['Numpad0'] = el}>0</span>
+                        <span className="key NumpadDecimal" ref={el => keyRefs.current['NumpadDecimal'] = el}>.</span>
                     </div>
                 </div>
             </div>
