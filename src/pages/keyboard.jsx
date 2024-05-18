@@ -105,39 +105,39 @@ const Keyboard = () => {
             <div className="keyboard">
                 <div className="container function-qwerty-container">
                     <div className="first-row function-qwerty">
-                        <span className="key Escape" ref={el => keyRefs.current['Escape'] = el}>Esc</span>
+                        <span className="key Escape border-rose-400" ref={el => keyRefs.current['Escape'] = el}>Esc</span>
 
-                        <span className="key F1" ref={el => keyRefs.current['F1'] = el}>F1</span>
-                        <span className="key F2" ref={el => keyRefs.current['F2'] = el}>F2</span>
-                        <span className="key F3" ref={el => keyRefs.current['F3'] = el}>F3</span>
-                        <span className="key F4" ref={el => keyRefs.current['F4'] = el}>F4</span>
+                        <span className="key F1 border-rose-400" ref={el => keyRefs.current['F1'] = el}>F1</span>
+                        <span className="key F2 border-rose-400" ref={el => keyRefs.current['F2'] = el}>F2</span>
+                        <span className="key F3 border-rose-400" ref={el => keyRefs.current['F3'] = el}>F3</span>
+                        <span className="key F4 border-rose-400" ref={el => keyRefs.current['F4'] = el}>F4</span>
 
-                        <span className="key F5" ref={el => keyRefs.current['F5'] = el}>F5</span>
-                        <span className="key F6" ref={el => keyRefs.current['F6'] = el}>F6</span>
-                        <span className="key F7" ref={el => keyRefs.current['F7'] = el}>F7</span>
-                        <span className="key F8" ref={el => keyRefs.current['F8'] = el}>F8</span>
+                        <span className="key F5 border-rose-400" ref={el => keyRefs.current['F5'] = el}>F5</span>
+                        <span className="key F6 border-rose-400" ref={el => keyRefs.current['F6'] = el}>F6</span>
+                        <span className="key F7 border-rose-400" ref={el => keyRefs.current['F7'] = el}>F7</span>
+                        <span className="key F8 border-rose-400" ref={el => keyRefs.current['F8'] = el}>F8</span>
 
-                        <span className="key F9" ref={el => keyRefs.current['F9'] = el}>F9</span>
-                        <span className="key F10" ref={el => keyRefs.current['F10'] = el}>F10</span>
-                        <span className="key F11" ref={el => keyRefs.current['F11'] = el}>F11</span>
-                        <span className="key F12" ref={el => keyRefs.current['F12'] = el}>F12</span>
+                        <span className="key F9 border-rose-400" ref={el => keyRefs.current['F9'] = el}>F9</span>
+                        <span className="key F10 border-rose-400" ref={el => keyRefs.current['F10'] = el}>F10</span>
+                        <span className="key F11 border-rose-400" ref={el => keyRefs.current['F11'] = el}>F11</span>
+                        <span className="key F12 border-rose-400" ref={el => keyRefs.current['F12'] = el}>F12</span>
                     </div>
 
                     <div className="sec-row function-qwerty">
-                        <span className="key Backquote" ref={el => keyRefs.current['Backquote'] = el}>`<br />~</span>
-                        <span className="key Digit1" ref={el => keyRefs.current['Digit1'] = el}>!<br />1</span>
-                        <span className="key Digit2" ref={el => keyRefs.current['Digit2'] = el}>@<br />2</span>
-                        <span className="key Digit3" ref={el => keyRefs.current['Digit3'] = el}>#<br />3</span>
-                        <span className="key Digit4" ref={el => keyRefs.current['Digit4'] = el}>$<br />4</span>
-                        <span className="key Digit5" ref={el => keyRefs.current['Digit5'] = el}>%<br />5</span>
-                        <span className="key Digit6" ref={el => keyRefs.current['Digit6'] = el}>^<br />6</span>
-                        <span className="key Digit7" ref={el => keyRefs.current['Digit7'] = el}>&<br />7</span>
-                        <span className="key Digit8" ref={el => keyRefs.current['Digit8'] = el}>*<br />8</span>
-                        <span className="key Digit9" ref={el => keyRefs.current['Digit9'] = el}>(<br />9</span>
-                        <span className="key Digit0" ref={el => keyRefs.current['Digit0'] = el}>)<br />0</span>
-                        <span className="key Minus" ref={el => keyRefs.current['Minus'] = el}>_<br />-</span>
-                        <span className="key Equal" ref={el => keyRefs.current['Equal'] = el}>+<br />=</span>
-                        <span className="key Backspace medium-modifier" ref={el => keyRefs.current['Backspace'] = el}>Backspace</span>
+                        <span className="key Backquote border-rose-400" ref={el => keyRefs.current['Backquote'] = el}>`<br />~</span>
+                        <span className="key Digit1 border-rose-400" ref={el => keyRefs.current['Digit1'] = el}>!<br />1</span>
+                        <span className="key Digit2 border-rose-400" ref={el => keyRefs.current['Digit2'] = el}>@<br />2</span>
+                        <span className="key Digit3 border-rose-400" ref={el => keyRefs.current['Digit3'] = el}>#<br />3</span>
+                        <span className="key Digit4 border-rose-400" ref={el => keyRefs.current['Digit4'] = el}>$<br />4</span>
+                        <span className="key Digit5 border-rose-400" ref={el => keyRefs.current['Digit5'] = el}>%<br />5</span>
+                        <span className="key Digit6 border-rose-400" ref={el => keyRefs.current['Digit6'] = el}>^<br />6</span>
+                        <span className="key Digit7 border-rose-400" ref={el => keyRefs.current['Digit7'] = el}>&<br />7</span>
+                        <span className="key Digit8 border-rose-400" ref={el => keyRefs.current['Digit8'] = el}>*<br />8</span>
+                        <span className="key Digit9 border-rose-400" ref={el => keyRefs.current['Digit9'] = el}>(<br />9</span>
+                        <span className="key Digit0 border-rose-400" ref={el => keyRefs.current['Digit0'] = el}>)<br />0</span>
+                        <span className="key Minus border-rose-400" ref={el => keyRefs.current['Minus'] = el}>_<br />-</span>
+                        <span className="key Equal border-rose-400" ref={el => keyRefs.current['Equal'] = el}>+<br />=</span>
+                        <span className="key Backspace medium-modifier border-rose-400  " ref={el => keyRefs.current['Backspace'] = el}>Backspace</span>
                     </div>
 
                     <div className="third-row function-qwerty">
@@ -152,8 +152,8 @@ const Keyboard = () => {
                         <span className="key KeyI" ref={el => keyRefs.current['KeyI'] = el}>I</span>
                         <span className="key KeyO" ref={el => keyRefs.current['KeyO'] = el}>O</span>
                         <span className="key KeyP" ref={el => keyRefs.current['KeyP'] = el}>P</span>
-                        <span className="key BracketLeft" ref={el => keyRefs.current['BracketLeft'] = el}>{'{'}</span>
-                        <span className="key BracketRight" ref={el => keyRefs.current['BracketRight'] = el}>{'}'}</span>
+                        <span className="key BracketLeft" ref={el => keyRefs.current['BracketLeft'] = el}>{'{'}<br/>{'['}</span>
+                        <span className="key BracketRight" ref={el => keyRefs.current['BracketRight'] = el}>{'}'}<br/>{']'}</span>
                         <span className="key Backslash small-modifier" ref={el => keyRefs.current['Backslash'] = el}>|<br/>\</span>
                     </div>
 
@@ -219,13 +219,13 @@ const Keyboard = () => {
                     </div>
 
                     <div className="fifth-row arrows">
-                        <span className="key ArrowUp" ref={el => keyRefs.current['ArrowUp'] = el}>&#8593;</span>
+                        <span className="key ArrowUp border-blue-600" ref={el => keyRefs.current['ArrowUp'] = el}>&#8593;</span>
                     </div>
 
                     <div className="sixth-row arrows">
-                        <span className="key ArrowLeft" ref={el => keyRefs.current['ArrowLeft'] = el}>&#8592;</span>
-                        <span className="key ArrowDown" ref={el => keyRefs.current['ArrowDown'] = el}>&#8595;</span>
-                        <span className="key ArrowRight" ref={el => keyRefs.current['ArrowRight'] = el}>&#8594;</span>
+                        <span className="key ArrowLeft border-blue-600" ref={el => keyRefs.current['ArrowLeft'] = el}>&#8592;</span>
+                        <span className="key ArrowDown border-blue-600" ref={el => keyRefs.current['ArrowDown'] = el}>&#8595;</span>
+                        <span className="key ArrowRight border-blue-600" ref={el => keyRefs.current['ArrowRight'] = el}>&#8594;</span>
                     </div>
                 </div>
 

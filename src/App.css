@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
 :root {
   --keywidth: 52px;
   --keyheight: 55px;
@@ -20,6 +22,8 @@
   font-size: 50px;
   width: 100%;
   color: #074173;
+  font-family: 'Space Grotesk';
+  font-weight: 500;
 }
 
 .keyboardAccess {
