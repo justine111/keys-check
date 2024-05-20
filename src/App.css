@@ -2,10 +2,11 @@
 
 :root {
   --keywidth: 52px;
-  --keyheight: 55px;
+  --keyheight: 51px;
   --keyrowgap: 5px;
   --keycolumngap: 2px;
 }
+
 
 .page {
   width: 100%;
@@ -15,6 +16,7 @@
   justify-items: center;
   font-family: "Roboto Mono", monospace;
 }
+
 
 .header {
   padding-top: 20px;
